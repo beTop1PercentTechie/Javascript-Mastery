@@ -75,3 +75,128 @@ const fahrenheit = 90;
 const celsius = ((fahrenheit - 32) * 5) / 9;
 console.log(celsius); //32.22
 ```
+
+### Is Even
+
+**Q:Write a program that checks if a number is even or odd and logs the result to the console.**
+
+```js
+const number = 4;
+
+if (number % 2 === 0) {
+  console.log(`${number} is even.`);
+} else {
+  console.log(`${number} is odd.`);
+}
+```
+
+### Absolute Value
+
+**write a program that calculates the absolute value of a number and then logs the result to the console?**
+
+```js
+const num = -6;
+const absoluteValue = Math.abs(num);
+console.log(absoluteValue);
+```
+
+### Access Nested Object
+
+**Q:Given the following user object, please use dot notation to log the value of the "email" property to the console.**
+
+```js
+const user = {
+  name: "Prabir",
+  contact: {
+    email: "prabir@gmail.com",
+    phone: "123-456-7890",
+  },
+};
+```
+
+**Answer**
+
+```js
+const user = {
+  name: "Prabir",
+  contact: {
+    email: "prabir@gmail.com",
+    phone: "123-456-7890",
+  },
+};
+console.log(user.contact.email);
+```
+
+### Add Method to Object
+
+**Q:Please add a method named "calculateSum" . This method should take two parameters, "num1" and "num2", and return their sum.**
+
+```js
+const calculator = {
+  calculateSum: function (num1, num2) {
+    return num1 + num2;
+  },
+};
+console.log(calculator.calculateSum(5, 4));
+```
+
+### Rectangle Area
+
+Q:Create an object named `rectangle` with properties for `length` and `width`. Additionally, include a method named `area` within the object that computes and returns the rectangle's area (length multiplied by width).
+
+```js
+const rectangle = {
+  length: 15,
+  width: 4,
+  area: function () {
+    return this.length * this.width;
+  },
+};
+console.log(rectangle.area());
+```
+
+### Add Element to Array
+
+Given an array `animal`, append the string `Elephant` to its end using the push() method, and then print the resulting array to the console.
+
+```js
+const animal = ["Dog", "Cat", "Tiger", "Parrot"];
+animal.push("Elephant");
+
+console.log(animal); //[ 'Dog', 'Cat', 'Tiger', 'Parrot', 'Elephant' ]
+```
+
+### Remove the first element from the Array
+
+Remove the First element using shift() method and then print the resulting array to the console.
+
+```js
+const animal = ["Dog", "Cat", "Tiger", "Parrot"];
+animal.shift();
+
+console.log(animal); //[ 'Cat', 'Tiger', 'Parrot' ]
+```
+
+### Filtering Arrays
+
+Given an array 'numbers', use a filter to remove all numbers less than 10, and then print the filtered array to the console.
+
+```js
+const numbers = [1, 2, 3, 4, 5, , 23, 45, 34];
+
+const filteredNum = numbers.filter((num) => num >= 10);
+
+console.log(filteredNum); //[ 23, 45, 34 ]
+```
+
+### Find the Largest Number in an array
+
+```js
+const numbers = [1, 2, 3, 4, 5, 23, 45, 34];
+
+const LargeNumb = Math.max(...numbers);
+
+console.log(LargeNumb); //45
+```
+
+### Concatenate Arrays
