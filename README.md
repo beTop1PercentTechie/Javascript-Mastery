@@ -348,3 +348,376 @@ newObj["key4"] = "value4"; // add another key-value pair using the square bracke
 ```
 
 ### Creating an object using the new keyword
+
+You can also create an object using the new keyword in JavaScript, but it's generally not recommended because it's more complex and verbose.
+
+Here's an example explained in simpler terms:
+
+```js
+let newObj = new Object(); // create an object using the new keyword
+newObj.key1 = "value1"; // add a key-value pair
+```
+
+### Accessing values in an object
+
+To get a value from an object in JavaScript, you can use either the dot notation or square bracket notation.
+
+Here's a simple explanation of how to do it using the dot notation:
+
+```js
+console.log(newObj.key1); // logs 'value1'
+```
+
+Here's an example using the square bracket notation:
+
+```js
+console.log(newObj["key1"]); //'value1'
+```
+
+### Using Nested objects
+
+You can also put objects inside other objects, which is called nested objects. To get a value from a nested object, you can use either dot notation or square bracket notation to follow the chain of properties.
+
+Here's an example explained simply:
+
+```js
+let myObject = {
+  name: "Prabir",
+  contact: {
+    email: "prabir@gmail.com",
+    phone: "9878-2345-45",
+  },
+};
+
+console.log(myObject.contact.email); // prabir@gmail.com
+console.log(myObject["contact"]["phone"]); // 9878-2345-45
+```
+
+### Constructor Function
+
+Constructor functions are used to create objects in JavaScript by defining a function that serves as a blueprint for creating multiple instances of similar objects.
+
+Lets take an example :
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Creating an object using the constructor function
+let person1 = new Person("Prabir", 30);
+let person2 = new Person("Vishwa", 25);
+
+console.log(person1); // Outputs: Person { name: 'Prabir', age: 30 }
+console.log(person2); // Outputs: Person { name: 'Vishwa', age: 25 }
+```
+
+### Declaring Functions Inside Objects
+
+We can declare a function inside a object to create method
+
+```js
+const myCalculator = {
+  // Method to add two numbers
+  addition: function (number1, number2) {
+    return number1 + number2;
+  },
+  // Method to subtract two numbers
+  subtraction: function (number1, number2) {
+    return number1 - number2;
+  },
+};
+
+// Using the calculator object
+console.log(myCalculator.addition(2, 3)); // Output: 5
+console.log(myCalculator.subtraction(5, 3)); // Output: 2
+```
+
+### `this` Keyword
+
+In JavaScript, the this keyword refers to the object that is currently executing the function where this is used. It allows functions to access and operate on the object's properties and methods.
+
+```js
+let person = {
+  firstName: "Prabir",
+  lastName: "Kumar",
+  fullName: function () {
+    // 'this' refers to the 'person' object
+    return this.firstName + " " + this.lastName;
+  },
+};
+
+// Accessing object method using 'this'
+console.log(person.fullName()); // Output: Prabir Kumar
+```
+
+### What is an Array ?
+
+An array in JavaScript is a special type of object that is used to store multiple values within a single variable. It allows you to group values together under a single name .
+
+#### Accessing elements in an array using indexing
+
+- In JavaScript, arrays start counting their elements from zero. This means the first element in an array is at position 0, the second element is at position 1, and so on.
+- To get a specific element from an array, you use square brackets with the index number of the element you want to access. For example, if you have an array named myArray and you want to get the second element, you would use myArray[1] (remember, arrays start counting from 0).
+
+#### Finding the length of an array
+
+In JavaScript, you can determine the number of elements in an array using the length property. It tells you how many items are in the array. For example, if you have an array named myArray, you can find its length with myArray.length.
+
+#### Declaring an array
+
+n JavaScript, you can declare an array in two ways. The first method is using array literal notation, represented by square brackets containing elements separated by commas.
+
+For example:
+
+```js
+const arr = [3, 5, 7, 8, 9, 11];
+```
+
+the second way to declare an array is to use Array() constructor function.
+
+for example:
+
+```js
+const arr = new Array(3, 5, 7, 8, 9, 11);
+```
+
+#### Adding and removing elements
+
+- We can use push() method to add elements to the end of the array.
+
+```js
+const arr = [3, 5, 7, 8, 9, 11];
+arr.push(14);
+console.log(arr); //[3, 5, 7, 8, 9, 11,14]
+```
+
+- We can also remove the elements from an array using pop() method. The pop() method removes the last element from an array .
+
+```js
+const arr = [3, 5, 7, 8, 9, 11];
+const lastElement = arr.pop();
+console.log(lastElement); // Output: 11
+console.log(arr); // Output: [3, 5, 7, 8, 9];
+```
+
+#### sorting Arrays
+
+In JavaScript, you can arrange the elements of an array in order using the sort() method. It rearranges the elements directly within the array and gives back the sorted array. By default, sort() organizes elements alphabetically.
+
+For example:
+
+```js
+const myArray = ["banana", "apple", "orange", "litchi", "guava"];
+myArray.sort();
+console.log(myArray); //[ 'apple', 'banana', 'guava', 'litchi', 'orange' ]
+```
+
+let's take another example
+
+```js
+const myArray = ["banana", "apple", "orange", "Litchi", "Guava"];
+myArray.sort();
+console.log(myArray); //[ 'Guava', 'Litchi', 'apple', 'banana', 'orange' ]
+```
+
+#### Slicing an array
+
+We can extract a subarray from an existing array in JavaScript using the `slice()` method. This method requires two arguments: **the starting index and the ending index (exclusive).**
+
+For example:
+
+```js
+const myArray = ["banana", "apple", "orange", "Litchi", "Guava"];
+
+const slicedArray = myArray.slice(1, 4);
+
+console.log(slicedArray); //[ 'apple', 'orange', 'Litchi' ]
+```
+
+#### Concatenating Arrays
+
+We can use concat() method to concatenate two or more arrays
+
+```js
+const fruitsArray = ["Apple", "Banana", "Cherry"];
+const moreFruits = ["Date", "Elderberry"];
+const allFruits = fruitsArray.concat(moreFruits);
+console.log(allFruits); // ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+```
+
+#### Joining array elements
+
+We can convert an array into a string using the join method. This method accepts a separator as an argument.
+
+For example:
+
+```js
+const colorsArray = ["red", "blue", "green", "yellow"];
+const joinedColors = colorsArray.join(" - ");
+console.log(joinedColors); // "red - blue - green - yellow"
+```
+
+#### Reversing Arrays
+
+Another helpful method for arrays is `Array.prototype.reverse()`. This method changes the order of the elements in an array to be the opposite, which can be useful in some situations. For example:
+
+```js
+const letters = ["a", "b", "c", "d", "e"];
+letters.reverse();
+console.log(letters); // Output: ['e', 'd', 'c', 'b', 'a']
+```
+
+#### Using Arrays with object
+
+A common use case for arrays and objects together is in creating dynamic user interfaces, such as those found in web applications. For example, suppose we have a web page that displays a list of products. Each product consists of several pieces of data, including the product name, manufacturer, price, and description. We can represent this data using an array of objects:
+
+```js
+const products = [
+  {
+    name: "Product 1",
+    manufacturer: "Company A",
+    price: 29.99,
+    description: "This is the description for Product 1...",
+  },
+  {
+    name: "Product 2",
+    manufacturer: "Company B",
+    price: 49.99,
+    description: "This is the description for Product 2...",
+  },
+  {
+    name: "Product 3",
+    manufacturer: "Company C",
+    price: 19.99,
+    description: "This is the description for Product 3...",
+  },
+];
+```
+
+## Quiz
+
+1. Which of the following is a primitive data type in JavaScript?
+
+   A. Array
+
+   B. Object
+
+   C. String
+
+   D. Function
+
+Ans: String
+
+2. How do you create an array in JavaScript?
+
+   A. let arr = {};
+
+   B. let arr = [];
+
+   C. let arr = ();
+
+   D. let arr = <>;
+
+Answer: let arr = []
+
+3. How can you add an element to the end of an array in JavaScript?
+
+   A. arr.add(element);
+
+   B. arr.push(element);
+
+   C. arr.append(element);
+
+   D. arr.insert(element);
+
+Answer: arr.push(element);
+
+4. How do you access the first element of an array named myArray?
+
+   A. myArray[0]
+
+   B. myArray[1]
+
+   C. myArray.first()
+
+   D. myArray.get(0)
+
+Answer: myArray[0]
+
+5. Which of the following methods is used to iterate over all properties of an object?
+
+   A. for...of
+
+   B. for...in
+
+   C. forEach
+
+   D. map
+
+Answer: for...in
+
+6. What will be the output of the following code?
+
+   let obj = { a: 1, b: 2, c: 3 };
+
+   console.log(Object.keys(obj));
+
+   A. [a, b, c]
+
+   B. ['a', 'b', 'c']
+
+   C. [1, 2, 3]
+
+   D. ['1', '2', '3']
+
+Answer: ['a', 'b', 'c']
+
+7. Which method is used to remove the last element from an array?
+
+   A. shift()
+
+   B. unshift()
+
+   C. pop()
+
+   D. splice()
+
+Answer: pop()
+
+8. What is the correct way to create an object in JavaScript?
+
+   A. let obj = [];
+
+   B. let obj = ();
+
+   C. let obj = {};
+
+   D. let obj = <>;
+
+Answer: let obj = {};
+
+9. How do you check the type of a variable in JavaScript?
+
+   A. typeof variable
+
+   B. type variable
+
+   C. varType(variable)
+
+   D. checkType(variable)
+
+Answer: typeof variable
+
+10. Which of the following will correctly merge two arrays arr1 and arr2?
+
+    A. arr1.merge(arr2);
+
+    B. arr1.concat(arr2);
+
+    C. arr1.add(arr2);
+
+    D. arr1.combine(arr2);
+
+Answer: arr1.concat(arr2);
