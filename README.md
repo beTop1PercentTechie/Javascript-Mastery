@@ -200,3 +200,151 @@ console.log(LargeNumb); //45
 ```
 
 ### Concatenate Arrays
+
+```js
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const concatenatedArray = array1.concat(array2);
+console.log(concatenatedArray); //[ 1, 2, 3, 4, 5, 6 ]
+```
+
+### Reverse String
+
+In this exercise, you'll reverse the letters of the given string str. To achieve this, first convert str into an array using the split() method, then reverse the array with the reverse() method, and finally, convert it back to a string using the join() method. Afterward, log the resulting string to the console.
+
+```js
+const str = "hello world";
+const charArray = str.split("");
+const reversedCharArray = charArray.reverse();
+const reversedStr = reversedCharArray.join("");
+console.log(reversedStr); //dlrow olleh
+```
+
+Given an array `arr` and an element `elem`, use the `indexOf()` method to find the index of the first occurrence of `elem` in the array, and log the index to the console.
+
+```js
+const arr = ["Dog", "Cat", "Tiger", "Parrot"];
+const elem = "Cat";
+const index = arr.indexOf(elem);
+console.log(index); //1
+```
+
+## Datatype Cheatsheet
+
+### Numbers
+
+- In JavaScript, numbers can be whole numbers or decimals. To find out what type a number is, use the typeof keyword with the number you want to check. Here's an example:
+
+```js
+console.log(typeof 20); // Output: "number"
+console.log(typeof 8.799); // Output: "number"
+```
+
+- To do simple math in JavaScript, you use symbols like + (plus), - (minus), \* (multiply), / (divide), and % (modulo). For example:
+
+```js
+console.log(5 + 4); //9
+console.log(5 - 4); //1
+console.log(5 * 6); //30
+console.log(20 / 6); //3.33333
+console.log(20 % 6); //2
+```
+
+You can also use JavaScript's built-in Math tool to do more complicated math tasks. For example:
+
+```js
+console.log(Math.random()); // Output: a random number between 0 and 1
+console.log(Math.PI); // Output: 3.141592653589793
+```
+
+### String
+
+- In JavaScript, strings are sequences of characters from any language and are enclosed in either single (' ') or double (" ") quotes. To find out how many characters are in a string, use the built-in length property.
+
+```js
+console.log("Prabir".length); // Output: 6
+```
+
+- To convert a string to uppercase, we use `toUppercase() method`
+
+```js
+console.log("prabir".toUpperCase()); // Output: "PRABIR"
+```
+
+- To concatenate strings, We use the + operator.
+
+```js
+console.log("Prabir" + " Kumar"); // Output: "Prabir kumar"
+```
+
+- You can also get specific characters from a string using the charAt() method in JavaScript.
+
+```js
+console.log("prabir".charAt(0)); // Output: "p"
+```
+
+### Booleans
+
+- In JavaScript, booleans can be either true or false. You can check if a value is a boolean using the typeof keyword.
+
+```js
+console.log(typeof true); // Output: "boolean"
+```
+
+- You can also convert other data types to booleans using the Boolean() constructor.
+
+```js
+console.log(Boolean(0)); // Output: false
+console.log(Boolean("Prabir")); // Output: true
+```
+
+### Falsy Values
+
+When JavaScript needs a Boolean value, like in an if statement or a while loop, some values are automatically treated as false. These are called "falsy values".
+
+The following are the falsy values:
+
+- **false**: The boolean value false is obviously false.
+
+- **0**: The number 0 is also considered false, whether it's an integer (whole number) or a float (decimal number).
+
+- **null and undefined**: These represent absence of value and are considered false.
+
+- **NaN**: Stands for Not-a-Number, occurs when you perform an invalid mathematical operation in JavaScript.
+
+- **"" (empty string)**: A string with no characters inside it is also considered false because it has no meaningful value.
+
+### Initializing objects with object literal syntax
+
+Object literal syntax is a quick way to create an object in JavaScript by defining its properties and values inside curly braces. Here's how you do it:
+
+```js
+let newObj = {}; // create an empty object
+newObj.key1 = "value1"; // add a key-value pair
+newObj.key2 = "value2"; // add another key-value pair
+```
+
+Another way to create an object quickly in JavaScript is by directly defining its properties and values inside curly braces. Here's how you do it:
+
+```js
+let newObj = {
+  key1: "value1",
+  key2: "value2",
+};
+```
+
+### Adding key-value pairs to an object
+
+- To add a property and its value to an object in JavaScript, you can use either the dot notation or square bracket notation. Here's an example using the dot notation explained in simple terms:
+
+```js
+newObj.key3 = "value3"; // add another key-value pair using the dot notation
+```
+
+- Using Square bracket
+
+```js
+newObj["key4"] = "value4"; // add another key-value pair using the square bracket notation
+```
+
+### Creating an object using the new keyword
