@@ -721,3 +721,104 @@ Answer: typeof variable
     D. arr1.combine(arr2);
 
 Answer: arr1.concat(arr2);
+
+## Variables
+
+### Is String or Number
+
+Create a function called `isStringOrNumber` that accepts a parameter value and returns true if value is a string or a number, and false otherwise.
+
+```js
+  return typeof value === 'string' || typeof value === 'number';
+}
+
+console.log(isStringOrNumber("Prabir")); // true
+console.log(isStringOrNumber(30)); // true
+console.log(isStringOrNumber(true)); // false
+
+```
+
+## Variable Scope
+
+Q:Create a function printNumbers that prints the numbers from 1 to a specified number n to the console. Also, print a variable callCount that keeps track of how many times the function has been called. The variable callCount should only be accessible inside the printNumbers function and should start at 0 every time the function is called.
+
+```js
+function printNumbers(n) {
+  let callCount = 0;
+
+  for (let i = 1; i <= n; i++) {
+    // Loop to print numbers from 1 to n
+    console.log(i);
+  }
+
+  callCount++; // Increment the call count
+  console.log("Function call count: " + callCount); // Print the call count
+}
+
+printNumbers(5); // This will print numbers from 1 to 5 and the call count
+```
+
+## Last Minute Notes
+
+### What are Variables?
+
+A variable is a placeholder that holds data or information. In programming, variables are constantly used to store and manipulate data. JavaScript variables are particularly simple because you don't need to worry about types. You can assign variables in JavaScript the same way, regardless of the data type.
+
+### Declaration and Assignment of Variables
+
+#### Declaration
+
+Declaration is the process of creating a variable. In JavaScript, you can declare a variable using var, let, or const.
+
+```js
+var myVariable;
+let anotherVariable;
+const fixedVariable;
+```
+
+#### Assignment
+
+Assignment is the process of giving a value to a variable. You use the assignment operator `=` for this purpose.
+
+```js
+myVariable = 10;
+anotherVariable = "Hello";
+fixedVariable = 3.14; // Note: const variables must be assigned a value when they are declared.
+```
+
+### Declaration and Assignment Together
+
+u can also declare and assign a variable in a single step.
+
+```js
+var myVariable = 10;
+let anotherVariable = "Hello";
+const fixedVariable = 3.14; // Required for const
+```
+
+In JavaScript, variables are dynamically typed, meaning the type of the variable can change based on the value assigned to it. For example:
+
+```js
+let myVariable = 10; // Initially a number
+myVariable = "Now a string"; // Now it's a string
+```
+
+### Data Types in JavaScript Variables
+
+JavaScript variables can store various types of data, including strings, numbers, arrays, and objects. Data types are not explicitly specified in JavaScript, and variables can contain any type of data.
+
+Here are some examples:
+
+#### Strings
+
+```js
+var myName = "Prabir";
+```
+
+#### Numbers
+
+```js
+var myFavNum = 07;
+```
+
+#### Booleans
