@@ -822,3 +822,525 @@ var myFavNum = 07;
 ```
 
 #### Booleans
+
+A Boolean variable holds one of two values: true or false. You can use it to check if something is either "yes" or "no," like whether a user is logged in or a button is clicked.
+
+```js
+var isUserLoggedIn = true; // User is logged in
+var isButtonClicked = false; // Button is not clicked
+```
+
+#### Arrays
+
+An array is like a list that can hold different types of values, such as numbers, text, or even other arrays
+
+```js
+var myList = ["apple", 5, true];
+console.log(myList); // Outputs: ["apple", 5, true]
+```
+
+#### Objects
+
+Objects store data in a key-value format. Think of it like a dictionary: keys are the words, and values are their meanings.
+
+```js
+var person = {
+  name: "Prabir",
+  age: 30,
+};
+console.log(person.name); // Outputs: Prabir
+console.log(person.age); // Outputs: 30
+```
+
+#### Null
+
+Null means "empty" or "nothing." It is used when you want to say that a variable has no value on purpose.
+
+```js
+var emptyBox = null; // The box is empty
+console.log(emptyBox); // Outputs: null
+```
+
+#### Undefined
+
+Undefined means a variable exists but has not been given a value yet.
+
+```js
+var notAssigned;
+console.log(notAssigned); // Outputs: undefined
+notAssigned = "Now it has a value!";
+console.log(notAssigned); // Outputs: Now it has a value!
+```
+
+### Reassignment and Coercion of Variables
+
+You can change the value of a variable anytime, even to a different type like from a number to a string. JavaScript automatically converts (coerces) types if needed.
+
+Ex:
+
+```js
+var age = 25; // A number
+age = "Twenty-five"; // Now it's a string
+
+var greeting = "Hi";
+var number = 10;
+console.log(greeting + number); // Outputs: Hi10 (number becomes part of the string)
+```
+
+### Variable Scope in JavaScript
+
+#### Global Scope
+
+A globally scoped variable is created outside of any function and can be used anywhere in your code.
+
+```js
+var globalMessage = "Hello, world!";
+
+function showMessage() {
+  console.log(globalMessage); // Accessible here
+}
+
+showMessage();
+console.log(globalMessage); // Accessible here too
+```
+
+#### Local Scope
+
+A locally scoped variable is created inside a function and can only be used within that function.
+
+```js
+function showLocalMessage() {
+  var localMessage = "I exist only here";
+  console.log(localMessage); // Works here
+}
+
+showLocalMessage();
+// console.log(localMessage); // Error: localMessage is not defined
+```
+
+## Block Scope with let and const
+
+With let and const, variables are limited to the block where they are defined, like inside {} braces.
+
+Example (with let):
+
+```js
+function testBlockScope() {
+  if (true) {
+    let message = "Inside block";
+    console.log(message); // Works here
+  }
+  // console.log(message); // Error: message is out of scope
+}
+testBlockScope();
+```
+
+Example (with const):
+
+```js
+const appName = "SuperApp";
+console.log(appName); // Outputs: SuperApp
+// appName = "AnotherApp"; // Error: Cannot reassign a const variable
+```
+
+## Mutating Data in const Variables
+
+Even though const variables cannot be reassigned, you can change the content inside an object or array declared with const.
+
+```js
+const fruits = ["apple", "banana"];
+fruits.push("orange"); // Adding a new fruit
+console.log(fruits); // Outputs: ["apple", "banana", "orange"]
+
+const user = { name: "Alice", age: 25 };
+user.age = 26; // Changing the age
+console.log(user); // Outputs: { name: "Alice", age: 26 }
+```
+
+## Naming Rules for Variables
+
+Variable names can only use letters, numbers, \_ (underscore), or $ (dollar sign) but cannot start with a number or use reserved keywords.
+
+Valid Examples:
+
+```js
+var userName = "Alice";
+var _id = 101;
+var $price = 50;
+```
+
+Invalid Examples:
+
+```js
+// var 1user = "John"; // Cannot start with a number
+// var var = 10; // Cannot use reserved keywords
+```
+
+## Conditionals & Operators
+
+1. Compare Three Numbers
+
+Write a program to find the largest of three numbers.
+
+```js
+var num1 = 45,
+  num2 = 89,
+  num3 = 32;
+
+if (num1 > num2 && num1 > num3) {
+  console.log(num1 + " is the largest");
+} else if (num2 > num3) {
+  console.log(num2 + " is the largest");
+} else {
+  console.log(num3 + " is the largest");
+}
+```
+
+2. Loan Eligibility Checker
+
+Check if a person is eligible for a loan based on their age and income.
+
+```js
+var age = 28;
+var income = 30000;
+
+if (age >= 21 && age <= 60 && income >= 25000) {
+  console.log("You are eligible for the loan.");
+} else {
+  console.log("You are not eligible for the loan.");
+}
+```
+
+3. Leap Year Checker
+
+   Check if a given year is a leap year or not.
+
+```js
+var year = 2024;
+
+if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+  console.log(year + " is a leap year.");
+} else {
+  console.log(year + " is not a leap year.");
+}
+```
+
+4. Grade Calculator
+
+   Calculate a student's grade based on their marks.
+
+```js
+var marks = 85;
+
+if (marks >= 90) {
+  console.log("Grade: A+");
+} else if (marks >= 80) {
+  console.log("Grade: A");
+} else if (marks >= 70) {
+  console.log("Grade: B");
+} else if (marks >= 60) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F");
+}
+```
+
+5.  Even or Odd Checker
+
+    Check if a number is even or odd.
+
+```js
+var number = 15;
+
+if (number % 2 === 0) {
+  console.log(number + " is even.");
+} else {
+  console.log(number + " is odd.");
+}
+```
+
+6. Simple Calculator
+
+Create a basic calculator for addition, subtraction, multiplication, and division.
+
+```js
+var num1 = 12,
+  num2 = 4;
+var operator = "*";
+
+if (operator === "+") {
+  console.log("Result: " + (num1 + num2));
+} else if (operator === "-") {
+  console.log("Result: " + (num1 - num2));
+} else if (operator === "*") {
+  console.log("Result: " + num1 * num2);
+} else if (operator === "/") {
+  console.log("Result: " + num1 / num2);
+} else {
+  console.log("Invalid operator");
+}
+```
+
+7. Password Strength Checker
+
+   Check if a password is strong based on length and character rules.
+
+```js
+var password = "Passw0rd123";
+
+if (password.length >= 8 && /\d/.test(password) && /[A-Z]/.test(password)) {
+  console.log("Strong password");
+} else {
+  console.log("Weak password");
+}
+```
+
+8. FizzBuzz
+
+Print numbers from 1 to 100. For multiples of 3, print "Fizz"; for multiples of 5, print "Buzz"; for multiples of both, print "FizzBuzz.
+
+```js
+for (var i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+```
+
+9. Positive, Negative, or Zero Checker
+
+   Check if a number is positive, negative, or zero.
+
+```js
+var num = -10;
+
+if (num > 0) {
+  console.log(num + " is positive.");
+} else if (num < 0) {
+  console.log(num + " is negative.");
+} else {
+  console.log("The number is zero.");
+}
+```
+
+10. Traffic Light System
+
+Simulate a traffic light system using conditional statements.
+
+```js
+var light = "green";
+
+if (light === "red") {
+  console.log("Stop");
+} else if (light === "yellow") {
+  console.log("Get ready");
+} else if (light === "green") {
+  console.log("Go");
+} else {
+  console.log("Invalid light color");
+}
+```
+
+## Last Minute Notes
+
+1. What is a Conditional?
+
+A conditional is a way to make decisions in your code. It allows your program to behave differently based on certain conditions or values.
+
+2. The if Statement
+
+The if statement checks a condition and runs the code inside its block only if the condition is true.
+
+Syntax:
+
+```js
+if (condition) {
+  // Code to run if condition is true
+}
+```
+
+Example:
+
+```js
+const age = 18;
+if (age >= 18) {
+  console.log("You are an adult.");
+}
+```
+
+If age is 18 or more, the message will appear. Otherwise, nothing happens.
+
+3. Adding More Conditions with else and else if
+
+- else: Runs code when the if condition is false.
+- else if: Adds another condition to check.
+
+Syntax:
+
+```js
+if (condition1) {
+  // Code if condition1 is true
+} else if (condition2) {
+  // Code if condition2 is true
+} else {
+  // Code if none of the above is true
+}
+```
+
+Example:
+
+```js
+const temperature = 30;
+
+if (temperature > 35) {
+  console.log("It's very hot!");
+} else if (temperature > 25) {
+  console.log("It's warm.");
+} else {
+  console.log("It's cold.");
+}
+```
+
+4. Logical operators
+
+   Logical operators let you combine multiple conditions:
+
+   - AND (&&): True if all conditions are true.
+   - OR (||): True if at least one condition is true.
+   - NOT (!): Reverses the condition (true becomes false, and vice versa).
+
+Examples:
+
+```js
+// AND (&&)
+const hasMoney = true;
+const isStoreOpen = true;
+if (hasMoney && isStoreOpen) {
+  console.log("You can buy something.");
+}
+
+// OR (||)
+const hasCash = false;
+const hasCreditCard = true;
+if (hasCash || hasCreditCard) {
+  console.log("You can still pay.");
+}
+
+// NOT (!)
+const isWeekend = false;
+if (!isWeekend) {
+  console.log("It's a weekday.");
+}
+```
+
+5. Comparison operator
+
+This table summarizes the common comparison operators in JavaScript, along with their meanings, examples, and results:
+
+| Operator | Meaning                       | Example   | Result |
+| -------- | ----------------------------- | --------- | ------ |
+| ==       | Equal (value only)            | 5 == "5"  | true   |
+| ===      | Strictly equal (value + type) | 5 === "5" | false  |
+| !=       | Not equal                     | 5 != "6"  | true   |
+| !==      | Strictly not equal            | 5 !== "5" | true   |
+| >        | Greater than                  | 5 > 3     | true   |
+| <        | Less than                     | 3 < 5     | true   |
+| >=       | Greater than or equal to      | 5 >= 5    | true   |
+| <=       | Less than or equal to         | 5 <= 3    | false  |
+
+6. Nested Conditionals
+
+You can place an if inside another if to check multiple levels of conditions.
+
+Examples:
+
+```js
+const balance = 100;
+const itemPrice = 50;
+const tax = 0.1;
+
+if (balance >= itemPrice) {
+  if (tax < 0.2) {
+    console.log("Purchase successful!");
+  } else {
+    console.log("Tax is too high.");
+  }
+} else {
+  console.log("Not enough balance.");
+}
+```
+
+7. The switch Statement
+
+The switch statement is a cleaner way to handle multiple cases.
+
+Syntax:
+
+```js
+switch (expression) {
+  case value1:
+    // Code if expression matches value1
+    break;
+  case value2:
+    // Code if expression matches value2
+    break;
+  default:
+  // Code if no match is found
+}
+```
+
+Example:
+
+```js
+const fruit = "apple";
+
+switch (fruit) {
+  case "apple":
+    console.log("I love apples!");
+    break;
+  case "banana":
+    console.log("Bananas are cool.");
+    break;
+  default:
+    console.log("Unknown fruit.");
+}
+```
+
+8. Key Differences: if-else vs switch
+
+- Use if-else for complex conditions.
+- Use switch for simple value matching.
+
+Example with multiple cases in switch:
+
+```js
+switch (num) {
+  case 1:
+  case 2:
+  case 3:
+    console.log("Low range");
+    break;
+  case 4:
+  case 5:
+    console.log("Mid range");
+    break;
+  default:
+    console.log("Out of range");
+}
+```
+
+**Summary**
+
+- Use if to run code based on a condition.
+- Use else if and else for additional checks.
+- Use &&, ||, and ! for combining conditions.
+- Use comparison operators to compare values.
+- Use switch for matching exact cases.
+
+##
